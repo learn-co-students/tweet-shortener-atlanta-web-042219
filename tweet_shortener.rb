@@ -2,8 +2,11 @@
 def word_substituter(tweet)
   dictionary =
     {"hello" => 'hi',
-      "to"||"two"||"too" => '2',
-      "for"||"four" => '4',
+      "to"=> '2',
+      "two"=> '2',
+      "too" => '2',
+      "for"=>'4',
+      "four" => '4',
       'be' => 'b',
       'you' => 'u',
       "at" => "@",
@@ -29,3 +32,19 @@ def bulk_tweet_shortener(array)
      puts word_substituter(each_tweet)
    end
 end
+
+def selective_tweet_shortener(tweet)
+  if tweet.length >139
+      word_substituter(tweet)
+  else
+    tweet
+  end
+end
+
+def shortened_tweet_truncator(tweet)
+  if tweet.length >140
+    tweet[0...140]
+  else
+    tweet
+  end
+  end
