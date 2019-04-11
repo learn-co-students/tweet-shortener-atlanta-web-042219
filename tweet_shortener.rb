@@ -21,8 +21,8 @@ def word_substituter(tweet)
   input.each do |word|
     dictionary.each_key do |key|
       if key == word
-        word = dictionary[key]
-        output << word
+        output << dictionary[key]
+
       else
         output << word
 
