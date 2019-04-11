@@ -29,6 +29,6 @@ def word_substituter(tweet)
       end
     end
   end
-  
+  output
 end
   
