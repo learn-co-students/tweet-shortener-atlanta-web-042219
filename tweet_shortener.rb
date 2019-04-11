@@ -1,4 +1,6 @@
 # Write your code here.
+require "pry"
+
 def dictionary
   dictionary = {
     "hello"=> "hi",
@@ -19,6 +21,7 @@ def word_substituter(tweet)
     dictionary.each_key do |key|
       if key == word
         word = dictionary[key]
+        binding.pry
       end
     end
   end
