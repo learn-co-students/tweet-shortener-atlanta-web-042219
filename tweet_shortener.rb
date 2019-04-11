@@ -18,6 +18,9 @@ end
 def word_substituter(tweet)
   input = tweet.split
   output = ""
+  
+  binding.pry
+  
   input.each do |word|
     dictionary.each_key do |key|
       if key == word
