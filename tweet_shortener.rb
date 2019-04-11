@@ -17,11 +17,15 @@ end
 
 def word_substituter(tweet)
   input = tweet.split
+  output = ""
   input.each do |word|
     dictionary.each_key do |key|
       if key == word
         word = dictionary[key]
-        binding.pry
+        output << word
+      else
+        output << word
+
       end
     end
   end
