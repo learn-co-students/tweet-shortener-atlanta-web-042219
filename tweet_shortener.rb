@@ -12,32 +12,31 @@ def dictionary
   "and" => "&"
   }
 end
-  
 
 
-def word_substituter(tweets)
-  tweets.split.collect do |word|
+def word_substituter(tweet)
+  tweet.split.collect do |word|
     if dictionary.keys.include?(word.downcase)
       word = dictionary[word.downcase]
-    else 
-      word 
-    end  
-  end.join(" ")  
-end 
+    else
+      word
+    end
+  end.join(" ")
+end
 
-def bulk_tweet_shortener(tweets1)
-  tweets1.each do |tweets|
-    puts word_substituter(tweets)
-  end 
-end 
-
-def selective_tweet_shortener(tweets)
-  if tweets.length > 140
-    word_substituter(tweets)
-  else
-    tweets
+def bulk_tweet_shortener(tweet)
+  tweet.each do |word|
+    puts word_substituter(word)
   end
-end 
+end
+
+def selective_tweet_shortener(tweet)
+  if tweet.length > 140
+    return word_substituter(tweet)
+  else
+    return tweet
+  end
+end
 
 def shortened_tweet_truncator(tweet)
   if tweet.length > 140
